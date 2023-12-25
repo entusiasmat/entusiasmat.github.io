@@ -1,26 +1,38 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>L'auca del regal de l'Arià</title>
-<style>
-    h1 {
-        text-align: center;
-        font-size: 2em;
-    }
-    .content {
-        display: flex;
-        justify-content: center;
-    }
-</style>
+  <meta charset="UTF-8">
+  <title>Simple Slideshow</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>L'auca del regal de l'Arià</h1>
-    <div class="content">
-        <button onclick="window.location.href='1_tremenda_samarreta.html'">Següent</button>
+  <header>
+    <h1>L'auca de l'Unclu i l'Arià</h1>
+  </header>
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="pictures/cropped-aria-paco-abenoza.jpg" alt="Slide 1">
     </div>
-    <div class="photo">
-        <img src="pictures/cropped-aria-paco-abenoza.jpg" alt="Aria Paco's Photo" style="max-width: 100%;">
+    <div class="slide">
+      <img src="pictures/tremenda-samarreta.jpg" alt="Slide 2">
     </div>
+    <div class="slide">
+        <img src="pictures/compra.png" alt="Slide 3">
+    </div>
+    <div class="slide">
+        <img src="pictures/correu.png" alt="Slide 4">
+    </div>
+    <div class="slide">
+        <img src="pictures/unclu.png" alt="Slide 5">
+    </div>
+    <div class="slide">
+        <img src="pictures/regal.jpg" alt="Slide 6">
+    </div>
+  </div>
+  <div class="navigation">
+    <button onclick="previousSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
