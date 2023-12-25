@@ -1,4 +1,5 @@
 let slideIndex = 0;
+const slides = document.getElementsByClassName("slide");
 showSlides(slideIndex);
 
 function nextSlide() {
@@ -10,12 +11,10 @@ function previousSlide() {
 }
 
 function showSlides(n) {
-  const slides = document.getElementsByClassName("slide");
-
   if (n >= slides.length) {
-    slideIndex = 0;
-  } else if (n < 0) {
     slideIndex = slides.length - 1;
+  } else if (n < 0) {
+    slideIndex = 0;
   }
 
   for (let i = 0; i < slides.length; i++) {
@@ -23,4 +22,10 @@ function showSlides(n) {
   }
 
   slides[slideIndex].style.display = "block";
+
+  const prevButton = document.querySelector("button[data-action='previous']");
+  const nextButton = document.querySelector("button[data-action='next']");
+
+  prevButton.disabled = slideIndex === 0;
+  nextButton.disabled = slideIndex === slides.length - 1;
 }
