@@ -10,6 +10,18 @@ function previousSlide() {
   showSlides(slideIndex -= 1);
 }
 
+// Add this function to resize the slideshow container for Slide 4
+function resizeSlideshowContainer() {
+  const slideFour = document.querySelector(".slide:nth-child(4)");
+  const slideshowContainer = document.querySelector(".slideshow-container");
+
+  if (slideFour.style.display !== "none") {
+    slideshowContainer.style.maxWidth = "100%";
+  } else {
+    slideshowContainer.style.maxWidth = "800px"; // Reset to default width
+  }
+}
+
 function showSlides(n) {
   if (n >= slides.length) {
     slideIndex = slides.length - 1;
@@ -28,4 +40,7 @@ function showSlides(n) {
 
   prevButton.disabled = slideIndex === 0;
   nextButton.disabled = slideIndex === slides.length - 1;
+
+    // Call resizeSlideshowContainer after showing slides
+    resizeSlideshowContainer();
 }
